@@ -13,19 +13,24 @@ namespace Pract1
             Console.WriteLine("Введите диапозон массива x, y");
             int x = int.Parse(Console.ReadLine());
             int y = int.Parse(Console.ReadLine());
-
-            RangeOfArray array = new RangeOfArray(x, y);
-
-            Console.WriteLine("Заполните массив");
-            for (int i = x; i < y; i++)
+            if (x > y)
             {
-                array[i] = int.Parse(Console.ReadLine());
+                Console.WriteLine("Недоступный диапозон");
             }
-
-            Console.WriteLine("Массив");
-            for (int i = x; i < y; i++)
+            else
             {
-                Console.WriteLine(array[i]);
+                RangeOfArray array = new RangeOfArray(x, y);
+                Console.WriteLine("Заполните массив");
+                for (int i = x; i < y; i++)
+                {
+                    array[i] = int.Parse(Console.ReadLine());
+                }
+
+                Console.WriteLine("Массив");
+                for (int i = x; i < y; i++)
+                {
+                    Console.WriteLine(array[i]);
+                }
             }
             Console.ReadLine();
         }
